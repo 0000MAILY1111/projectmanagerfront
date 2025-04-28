@@ -1,24 +1,21 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AppLayout from '@/layouts/AppLayout';
 import DashboardView from '@/views/DashboardView'
-import CreateProyectView from '@/views/CreateProjectView'
 import EditProjectView from '@/views/EditProjectView';
-
+import CreateProjectView from '@/views/CreateProjectView';
+import ProjectDetailsView from '@/views/ProjectDetailsView';
 
 export default function Router() {
-
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<AppLayout />} >
-                </Route>                  
-                  <Route path="/" element={<DashboardView />} index />
-                  <Route path="/proyects/create" element={<CreateProyectView />}  />
-                  <Route path="/proyects/edit/:id" element={<EditProjectView />}  />
-
-
+                <Route element={<AppLayout />}>
+                    <Route path="/" element={<DashboardView />} index />
+                    <Route path="/projects/create" element={<CreateProjectView />} />
+                    <Route path="/projects/:projectId" element={<ProjectDetailsView />} />
+                    <Route path="/projects/:projectId/edit" element={<EditProjectView />} />
+                </Route>
             </Routes>
         </BrowserRouter>
-
     )
 }

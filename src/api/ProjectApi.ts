@@ -20,6 +20,7 @@ export async function getProjects () {
            const {data }= await api ("/projects")
            const response = dashboardProjectSchema.safeParse(data)
            if (response.success  ) {
+                console.log("response", response)
                 return response.data
            }
            return data
@@ -36,7 +37,41 @@ export async function getProjects () {
 
 export async function getProjectById( id: Project ['_id']) {
     try {
-           const {data} = await api (`/projects/${id}`)
+        const {data} = await api (`/projects/${id}`)           
+         console.log("Datos recibidos:", data);
+         return data;          
+         
+ } catch (error) {   
+     if (isAxiosError(error) && error.response) {
+        throw new Error ( error.response.data.message)            
+
+     }
+ }
+ 
+}
+
+type ProjectAPIType={
+    formData: ProjectFormData,
+    projectId: Project ['_id']
+}
+    export async function updateProject({formData, projectId}:ProjectAPIType) {
+        try {
+               const {data} = await api.put<string>(`/projects/${projectId}`, formData)
+               
+               return data
+                
+        } catch (error) {   
+            if (isAxiosError(error) && error.response) {
+               throw new Error ( error.response.data.message) 
+                
+    
+            }
+    
+        }
+}
+export async function deleteProject( id: Project ['_id']) {
+    try {
+           const {data} = await api.delete<string> (`/projects/${id}`)
            
            return data
             
@@ -46,6 +81,7 @@ export async function getProjectById( id: Project ['_id']) {
             
 
         }
+
 
     }
 }

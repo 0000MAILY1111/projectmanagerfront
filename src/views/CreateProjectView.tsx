@@ -45,7 +45,7 @@ export default function CreateProjectView() {
     });
 
 
-const handleForm = async (formdata: ProjectFormData) =>   mutate (formdata)
+const handleForm = async (formData: ProjectFormData) =>   mutate (formData)
 return (
     <div className="max-w-3xl mx-auto">
         <h1 className="text-5xl font-black">Crear Proyectos</h1>
