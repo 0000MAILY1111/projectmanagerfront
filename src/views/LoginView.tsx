@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { UserLoginForm } from "@/types/index";
-import ErrorMessage from "@/components/ErrorMessage";
+
 import { Link } from "react-router-dom";
 
 export default function LoginView() {
@@ -38,9 +38,7 @@ export default function LoginView() {
               },
             })}
           />
-          {errors.email && (
-            <ErrorMessage>{errors.email.message}</ErrorMessage>
-          )}
+         
         </div>
 
         <div className="flex flex-col gap-5">
@@ -53,12 +51,10 @@ export default function LoginView() {
             placeholder="Password de Registro"
             className="w-full p-3  border-gray-300 border"
             {...register("password", {
-              required: "El Password es obligatorio",
+              required: "El Password eAs obligatorio",
             })}
           />
-          {errors.password && (
-            <ErrorMessage>{errors.password.message}</ErrorMessage>
-          )}
+          
         </div>
 
         <input

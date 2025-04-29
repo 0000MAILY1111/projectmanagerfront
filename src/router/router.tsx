@@ -18,10 +18,10 @@ export default function Router() {
                     <Route path="/projects/:projectId/edit" element={<EditProjectView />} />
                 </Route>
 
-                <Route element = {<AppLayout/>}>
-                <Route path='/auth/login' element={<LoginView/>} />  
-                <Route path='/auth/register' element={<RegisterView/>} /> 
-                </Route>
+             ////  <Route element = {<AppLayout/>}>
+              ////  <Route path='/auth/login' element={<LoginView/>} />  
+               //// <Route path='/auth/register' element={<RegisterView/>} /> 
+               //// </Route>
             </Routes>
         </BrowserRouter>
     )

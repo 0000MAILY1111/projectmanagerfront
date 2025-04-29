@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { UserRegistrationForm } from "@/types/index";
-import ErrorMessage from "@/components/ErrorMessage";
 
 export default function RegisterView() {
   
@@ -48,9 +47,7 @@ export default function RegisterView() {
               },
             })}
           />
-          {errors.email && (
-            <ErrorMessage>{errors.email.message}</ErrorMessage>
-          )}
+         
         </div>
 
         <div className="flex flex-col gap-5">
@@ -65,9 +62,7 @@ export default function RegisterView() {
               required: "El Nombre de usuario es obligatorio",
             })}
           />
-          {errors.name && (
-            <ErrorMessage>{errors.name.message}</ErrorMessage>
-          )}
+       
         </div>
 
         <div className="flex flex-col gap-5">
@@ -87,9 +82,7 @@ export default function RegisterView() {
               }
             })}
           />
-          {errors.password && (
-            <ErrorMessage>{errors.password.message}</ErrorMessage>
-          )}
+          
         </div>
 
         <div className="flex flex-col gap-5">
@@ -108,9 +101,6 @@ export default function RegisterView() {
             })}
           />
 
-          {errors.confirmedPassword && (
-            <ErrorMessage>{errors.confirmedPassword.message}</ErrorMessage>
-          )}
         </div>
 
         <input
