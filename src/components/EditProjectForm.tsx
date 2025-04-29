@@ -7,7 +7,6 @@ import{useMutation} from "@tanstack/react-query";
 import { updateProject } from "@/api/ProjectApi";
 import { toast } from "react-toastify";
 
-
 type EditProjectFormProps = {
    data:ProjectFormData
    projectId: Project['_id']
@@ -56,6 +55,7 @@ export default function EditProjectForm({ data, projectId }: EditProjectFormProp
     
                 <form onSubmit={handleSubmit(handleForm)} noValidate>
                     <ProjectForm register={register} errors={errors} />
+                    
                     <input
                         type="submit"
                         value="Guardar Cambios"
